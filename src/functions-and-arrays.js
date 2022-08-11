@@ -19,13 +19,27 @@ const words = [
 ];
 
 function findLongestWord(list) {
-  
+  let longestWord = null;
+
+  for (let word of list) {
+    if (longestWord === null || word.length > longestWord.length) {
+      longestWord = word;
+    }
+  }
+  return longestWord;
 }
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {}
+function sumNumbers(list) {
+  let total = 0;
+
+  for (let value of list) {
+    total = total + value;
+  }
+  return total;
+}
 
 // Iteration #3.1 Bonus:
 function sum() {}
@@ -34,7 +48,15 @@ function sum() {}
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(list) {
+  if (list.length === 0) {
+    return null;
+  }
+  const total = sumNumbers(list);
+  const count = list.length;
+  const average = total / count;
+  return average;
+}
 
 // Level 2: Array of strings
 const wordsArr = [
@@ -70,7 +92,19 @@ const wordsUnique = [
   "bring",
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(list) {
+  if (list.length === 0) {
+    return null;
+  }
+  let undefined = [];
+
+  for (let word of list) {
+    if (!uniqueList.includes(word)) {
+      uniqueList.push(word); //The push() method adds one or more elements to the end of an array and returns the new length of the array.
+    }
+  }
+  return uniqueList;
+}
 
 // Iteration #6: Find elements
 const wordsFind = [
@@ -84,7 +118,11 @@ const wordsFind = [
   "disobedience",
 ];
 
-function doesWordExist() {}
+function doesWordExist(list, searchQuery) {
+  if (list.length === 0) {
+    return null;
+  }
+}
 
 // Iteration #7: Count repetition
 const wordsCount = [
@@ -101,7 +139,16 @@ const wordsCount = [
   "matter",
 ];
 
-function howManyTimes() {}
+function howManyTimes(list, searchQuery) {
+  let count = 0;
+  for (let word of list) {
+    if (word === searchQuery) {
+      // count ++;
+      count = count + 1;
+    }
+  }
+  return count;
+}
 
 // Iteration #8: Bonus
 const matrix = [
